@@ -1,0 +1,406 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_locationId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_adminId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_surveyNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_area",
+						"type": "uint256"
+					}
+				],
+				"name": "addLand",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "changeStateBackToVerified",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "changeStateToOnSale",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_adminAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_reason",
+						"type": "string"
+					}
+				],
+				"name": "changeStateToRejected",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_adminAddress",
+						"type": "address"
+					}
+				],
+				"name": "changeStateToVerifed",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					}
+				],
+				"name": "getLandDetailsAsStruct",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "propertyId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "locationId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "adminId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "surveyNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "area",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "registeredTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "adminAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "scheduledDate",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "rejectedReason",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Property.StateOfProperty",
+								"name": "state",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct Property.Land",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "lands",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "locationId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "adminId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "surveyNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "area",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "registeredTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "adminAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "scheduledDate",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "rejectedReason",
+						"type": "string"
+					},
+					{
+						"internalType": "enum Property.StateOfProperty",
+						"name": "state",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					}
+				],
+				"name": "removeLand",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_locationId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_adminId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_surveyNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_area",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_adminAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_scheduledDate",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_rejectedReason",
+						"type": "string"
+					},
+					{
+						"internalType": "enum Property.StateOfProperty",
+						"name": "_state",
+						"type": "uint8"
+					}
+				],
+				"name": "updateLand",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_newOwner",
+						"type": "address"
+					}
+				],
+				"name": "updateOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/2_Properties.sol": "Property"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/2_Properties.sol": {
+			"keccak256": "0x4b10b738118a515725208d812fe197973a98f45e26a3fe5893dc53adaa722c40",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://61484be6dfc50b500dd891a26f9982a2d478ca6a0b0c6412c547d312565080ce",
+				"dweb:/ipfs/QmUuaAhZ4TLGBwBoUYyddLv1LyR66ET7NtVT1bDobmGSWN"
+			]
+		}
+	},
+	"version": 1
+}

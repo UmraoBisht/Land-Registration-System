@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "propertiesContract",
+				"outputs": [
+					{
+						"internalType": "contract Property",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/1_LandRegistry.sol": "LandRegistry"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/1_LandRegistry.sol": {
+			"keccak256": "0x312b197cd339e79cbce59345d691f8fee711a57c242f78e1b2e60b56ad229c4e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://71f02ac27783d0f4f0e7f8992fb58f064d1b33b0db7bb6f9c9da659921c11ce3",
+				"dweb:/ipfs/QmQJhmrHiymGHCkKkd4doKqLeTW3bTixGKfnq86u1g8prJ"
+			]
+		},
+		"contracts/2_Properties.sol": {
+			"keccak256": "0xf6611d7ba6c6cb81beff99922326457f2543cc7e52feb7ac753918c51d164a41",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c8c3389affceed4d8184c1c567a647658d98a068f08569ffdf97f3e29d7762ff",
+				"dweb:/ipfs/QmRBNVuPBU96irgHPCZgqUc736Ki6y5cLSdrQWc7EPxBGX"
+			]
+		}
+	},
+	"version": 1
+}

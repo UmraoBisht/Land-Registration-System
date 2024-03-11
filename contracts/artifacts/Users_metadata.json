@@ -1,0 +1,176 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "userID",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "accountCreatedDateTime",
+						"type": "uint256"
+					}
+				],
+				"name": "UserRegistered",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userId",
+						"type": "address"
+					}
+				],
+				"name": "getUserDetails",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "firstName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "lastName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "dateOfBirth",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "aadharNumber",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "accountCreated",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_firstName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_lastName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_dateOfBirth",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_aadhaarNumber",
+						"type": "string"
+					}
+				],
+				"name": "registerUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "users",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "userID",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "firstName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "lastName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "dateOfBirth",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "aadhaarNumber",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "accountCreatedDateTime",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/3_Users.sol": "Users"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/3_Users.sol": {
+			"keccak256": "0x038840c077984048f9d3918239bfda4229cce52a13d6ba1efd2eaf33a4d6a241",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://88daf0af4eefeacb5eb54f8ee1dfcfd59eba7e8e58204e73f91747ba974450b0",
+				"dweb:/ipfs/QmSBBA2XdxVENfqxe8dEKfLCYzFetkZGUYWPtNMx37A8mb"
+			]
+		}
+	},
+	"version": 1
+}
