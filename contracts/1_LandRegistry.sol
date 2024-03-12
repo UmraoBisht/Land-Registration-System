@@ -14,7 +14,7 @@ contract LandRegistry {
         contractOwner = msg.sender;
         transferOwnershipContractAddress = address(0);
         transferOwnershipContractAddressUpdated = false;
-
+        // Hello
         propertiesContract = new Property();
     }
 

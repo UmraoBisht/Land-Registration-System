@@ -460,11 +460,11 @@
 	},
 	"sources": {
 		"contracts/1_LandRegistry.sol": {
-			"keccak256": "0x6ddfa73e72e23663bed5141e55d95aa5ba7464effe8be6149aec9fa854dc533a",
+			"keccak256": "0x243f48727d5e14801f6a0fb3e2b39c8e288d0b0c19fdbe46d3c6dce32d8e5f4b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ce08dbac66a1ab853f97dfbb76be7aecf9b065f897d6ea141b39c569eccf8140",
-				"dweb:/ipfs/Qmd453jKRHqHpCa6GTmrUJr3ZDoewrnEtbHEu1GSBJpJdT"
+				"bzz-raw://57857d2a91b935a0d5bd877743e3f752e0e52828649a6d86b612e4fdd42f9ca0",
+				"dweb:/ipfs/QmWL2S2gsvFM1JLbeLp8KcCEBpWXFFLKPzLYBnPGNwDsGn"
 			]
 		},
 		"contracts/2_Properties.sol": {
