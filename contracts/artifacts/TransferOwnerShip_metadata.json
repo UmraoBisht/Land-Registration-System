@@ -1,0 +1,655 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "propertyId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "saleId",
+						"type": "uint256"
+					}
+				],
+				"name": "PropertyOnSale",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "saleId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "requestedUser",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "priceOffered",
+						"type": "uint256"
+					}
+				],
+				"name": "PurchaseRequestSent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "saleId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					}
+				],
+				"name": "SaleAccepted",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_saleId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "acceptBuyerRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "addPropertyOnSale",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_saleId",
+						"type": "uint256"
+					}
+				],
+				"name": "cancelPurchaseRequestSentToSeller",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_saleId",
+						"type": "uint256"
+					}
+				],
+				"name": "cancelSaleBySeller",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "etherValue",
+						"type": "uint256"
+					}
+				],
+				"name": "convertToWei",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "getMySales",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "saleId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "propertyId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "acceptedFor",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "acceptedPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "acceptedTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deadlineForPayment",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "paymentDone",
+								"type": "bool"
+							},
+							{
+								"internalType": "enum TransferOwnerShip.SaleState",
+								"name": "state",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct TransferOwnerShip.Sales[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "getRequestedSales",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "saleId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "propertyId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "acceptedFor",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "acceptedPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "acceptedTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deadlineForPayment",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "paymentDone",
+								"type": "bool"
+							},
+							{
+								"internalType": "enum TransferOwnerShip.SaleState",
+								"name": "state",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct TransferOwnerShip.Sales[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "saleId",
+						"type": "uint256"
+					}
+				],
+				"name": "getRequestedUsers",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "user",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "priceOffered",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum TransferOwnerShip.RequestedUserToASaleState",
+								"name": "state",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct TransferOwnerShip.RequestedUser[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "locationId",
+						"type": "uint256"
+					}
+				],
+				"name": "getSalesByLocation",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "saleId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "propertyId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "acceptedFor",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "acceptedPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "acceptedTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deadlineForPayment",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "paymentDone",
+								"type": "bool"
+							},
+							{
+								"internalType": "enum TransferOwnerShip.SaleState",
+								"name": "state",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct TransferOwnerShip.Sales[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_saleId",
+						"type": "uint256"
+					}
+				],
+				"name": "getStatusOfPurchaseRequest",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "user",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "priceOffered",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum TransferOwnerShip.RequestedUserToASaleState",
+								"name": "state",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct TransferOwnerShip.RequestedUser",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_saleId",
+						"type": "uint256"
+					}
+				],
+				"name": "reactivateSale",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_saleId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_buyer",
+						"type": "address"
+					}
+				],
+				"name": "rejectPurchaseRequestOfBuyer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_saleId",
+						"type": "uint256"
+					}
+				],
+				"name": "rejectingAcceptanceRequestByBuyer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_saleId",
+						"type": "uint256"
+					}
+				],
+				"name": "rejectingAcceptanceRequestBySeller",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "requestedSales",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_saleId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_priceOffered",
+						"type": "uint256"
+					}
+				],
+				"name": "rerequestPurchaseRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_saleId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_priceOffered",
+						"type": "uint256"
+					}
+				],
+				"name": "sendPurchaseRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "saleId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferOwnerShip",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/4_TransferOfOwnership.sol": "TransferOwnerShip"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/1_LandRegistry.sol": {
+			"keccak256": "0x6ddfa73e72e23663bed5141e55d95aa5ba7464effe8be6149aec9fa854dc533a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ce08dbac66a1ab853f97dfbb76be7aecf9b065f897d6ea141b39c569eccf8140",
+				"dweb:/ipfs/Qmd453jKRHqHpCa6GTmrUJr3ZDoewrnEtbHEu1GSBJpJdT"
+			]
+		},
+		"contracts/2_Properties.sol": {
+			"keccak256": "0x4b10b738118a515725208d812fe197973a98f45e26a3fe5893dc53adaa722c40",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://61484be6dfc50b500dd891a26f9982a2d478ca6a0b0c6412c547d312565080ce",
+				"dweb:/ipfs/QmUuaAhZ4TLGBwBoUYyddLv1LyR66ET7NtVT1bDobmGSWN"
+			]
+		},
+		"contracts/4_TransferOfOwnership.sol": {
+			"keccak256": "0x95a9633ae2435042d3f2393f1e37cea36f037235584c3d8f341a363482e371e1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://098647d360ca9123b24d7db317be2f0942b341a497c0e700c5f5b240c555fb11",
+				"dweb:/ipfs/QmdpsrQimiY6qF6zdnuW3pXjo9QvrFybmfQCqLHeS9LN1g"
+			]
+		}
+	},
+	"version": 1
+}

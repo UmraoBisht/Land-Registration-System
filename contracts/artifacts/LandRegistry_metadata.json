@@ -11,6 +11,352 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "propertyId",
+						"type": "uint256"
+					}
+				],
+				"name": "LandAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_locationId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_adminId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_surveyNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_area",
+						"type": "uint256"
+					}
+				],
+				"name": "addLand",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "adminIdToAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_adminId",
+						"type": "uint256"
+					}
+				],
+				"name": "getPropertiesByAdminId",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "propertyId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "locationId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "adminId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "surveyNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "area",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "registeredTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "adminAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "scheduledDate",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "rejectedReason",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Property.StateOfProperty",
+								"name": "state",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct Property.Land[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPropertiesContract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "getPropertiesOfOwner",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "propertyId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "locationId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "adminId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "surveyNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "area",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "registeredTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "adminAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "scheduledDate",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "rejectedReason",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Property.StateOfProperty",
+								"name": "state",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct Property.Land[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					}
+				],
+				"name": "getPropertyDetails",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "propertyId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "locationId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "adminId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "surveyNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "area",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "registeredTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "adminAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "scheduledDate",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "rejectedReason",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Property.StateOfProperty",
+								"name": "state",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct Property.Land",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_adminId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_adminAddress",
+						"type": "address"
+					}
+				],
+				"name": "mapAdminIdToAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "propertiesContract",
 				"outputs": [
@@ -21,6 +367,68 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_reason",
+						"type": "string"
+					}
+				],
+				"name": "rejectProperty",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_contractAddress",
+						"type": "address"
+					}
+				],
+				"name": "setTransferOwnershipContractAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_propertyId",
+						"type": "uint256"
+					}
+				],
+				"name": "verifyProperty",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -52,19 +460,19 @@
 	},
 	"sources": {
 		"contracts/1_LandRegistry.sol": {
-			"keccak256": "0x312b197cd339e79cbce59345d691f8fee711a57c242f78e1b2e60b56ad229c4e",
+			"keccak256": "0x6ddfa73e72e23663bed5141e55d95aa5ba7464effe8be6149aec9fa854dc533a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://71f02ac27783d0f4f0e7f8992fb58f064d1b33b0db7bb6f9c9da659921c11ce3",
-				"dweb:/ipfs/QmQJhmrHiymGHCkKkd4doKqLeTW3bTixGKfnq86u1g8prJ"
+				"bzz-raw://ce08dbac66a1ab853f97dfbb76be7aecf9b065f897d6ea141b39c569eccf8140",
+				"dweb:/ipfs/Qmd453jKRHqHpCa6GTmrUJr3ZDoewrnEtbHEu1GSBJpJdT"
 			]
 		},
 		"contracts/2_Properties.sol": {
-			"keccak256": "0xf6611d7ba6c6cb81beff99922326457f2543cc7e52feb7ac753918c51d164a41",
+			"keccak256": "0x4b10b738118a515725208d812fe197973a98f45e26a3fe5893dc53adaa722c40",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c8c3389affceed4d8184c1c567a647658d98a068f08569ffdf97f3e29d7762ff",
-				"dweb:/ipfs/QmRBNVuPBU96irgHPCZgqUc736Ki6y5cLSdrQWc7EPxBGX"
+				"bzz-raw://61484be6dfc50b500dd891a26f9982a2d478ca6a0b0c6412c547d312565080ce",
+				"dweb:/ipfs/QmUuaAhZ4TLGBwBoUYyddLv1LyR66ET7NtVT1bDobmGSWN"
 			]
 		}
 	},
